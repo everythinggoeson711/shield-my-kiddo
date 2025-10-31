@@ -14,6 +14,13 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+    // Prevent duplicate copies of React in the bundle which can cause runtime
+    // errors like `De.createContext` when multiple React instances are present.
+    dedupe: ["react", "react-dom"],
+  },
+  // Speed up dependency pre-bundling and ensure react/react-dom are optimized
+  optimizeDeps: {
+    include: ["react", "react-dom"],
   },
   build: {
     chunkSizeWarningLimit: 1200,
