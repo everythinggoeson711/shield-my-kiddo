@@ -4,10 +4,10 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const menuItems = [
-  { icon: LayoutDashboard, label: "Overview", path: "/dashboard" },
-  { icon: Activity, label: "Activity", path: "/activity" },
-  { icon: Smartphone, label: "Devices", path: "/devices" },
-  { icon: Settings, label: "Settings", path: "/settings" },
+  { icon: LayoutDashboard, label: "Tổng quan", path: "/dashboard" },
+  { icon: Activity, label: "Hoạt động", path: "/activity" },
+  { icon: Smartphone, label: "Thiết bị", path: "/devices" },
+  { icon: Settings, label: "Cấu hình", path: "/settings" },
 ];
 
 export const Sidebar = () => {
@@ -51,7 +51,7 @@ export const Sidebar = () => {
           className="w-full justify-start gap-3 text-muted-foreground hover:text-destructive"
         >
           <LogOut className="h-5 w-5" />
-          Logout
+          Đăng xuất
         </Button>
       </nav>
     </aside>

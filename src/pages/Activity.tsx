@@ -13,14 +13,14 @@ import {
 } from "@/components/ui/select";
 
 const activityData = [
-  { id: 1, name: "YouTube", category: "Video", timeSpent: "2h 15m", status: "allowed" },
-  { id: 2, name: "TikTok", category: "Social", timeSpent: "0m", status: "blocked" },
-  { id: 3, name: "Minecraft", category: "Gaming", timeSpent: "1h 45m", status: "allowed" },
-  { id: 4, name: "Instagram", category: "Social", timeSpent: "0m", status: "blocked" },
-  { id: 5, name: "Khan Academy", category: "Education", timeSpent: "3h 30m", status: "allowed" },
-  { id: 6, name: "Fortnite", category: "Gaming", timeSpent: "0m", status: "blocked" },
-  { id: 7, name: "Google Classroom", category: "Education", timeSpent: "2h 00m", status: "allowed" },
-  { id: 8, name: "Snapchat", category: "Social", timeSpent: "0m", status: "blocked" },
+  { id: 1, name: "YouTube", category: "Video", timeSpent: "2h 15m", status: "Cho phép" },
+  { id: 2, name: "TikTok", category: "Mạng xã hội", timeSpent: "0m", status: "Chặn" },
+  { id: 3, name: "Minecraft", category: "Trò chơi", timeSpent: "1h 45m", status: "Cho phép" },
+  { id: 4, name: "Instagram", category: "Mạng xã hội", timeSpent: "0m", status: "Chặn" },
+  { id: 5, name: "Khan Academy", category: "Giáo dục", timeSpent: "3h 30m", status: "Cho phép" },
+  { id: 6, name: "Fortnite", category: "Trò chơi", timeSpent: "0m", status: "Chặn" },
+  { id: 7, name: "Google Classroom", category: "Giáo dục", timeSpent: "2h 00m", status: "Cho phép" },
+  { id: 8, name: "Snapchat", category: "Mạng xã hội", timeSpent: "0m", status: "Chặn" },
 ];
 
 const Activity = () => {
@@ -39,8 +39,8 @@ const Activity = () => {
     <DashboardLayout>
       <div className="space-y-8">
         <div>
-          <h1 className="text-3xl font-bold text-foreground">Activity Monitor</h1>
-          <p className="mt-2 text-muted-foreground">Track and manage your child's app and website usage</p>
+            <h1 className="text-3xl font-bold text-foreground">Giám sát hoạt động</h1>
+            <p className="mt-2 text-muted-foreground">Theo dõi và quản lý việc sử dụng ứng dụng và trang web của con</p>
         </div>
 
         {/* Filters */}
@@ -49,7 +49,7 @@ const Activity = () => {
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <Input
-                placeholder="Search apps or websites..."
+                placeholder="Tìm kiếm ứng dụng hoặc trang web..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-9"
@@ -60,13 +60,13 @@ const Activity = () => {
               <Select value={categoryFilter} onValueChange={setCategoryFilter}>
                 <SelectTrigger className="w-40">
                   <Filter className="mr-2 h-4 w-4" />
-                  <SelectValue placeholder="Category" />
+                  <SelectValue placeholder="Danh mục" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">All Categories</SelectItem>
-                  <SelectItem value="Social">Social</SelectItem>
-                  <SelectItem value="Gaming">Gaming</SelectItem>
-                  <SelectItem value="Education">Education</SelectItem>
+                  <SelectItem value="all">Tất cả danh mục</SelectItem>
+                  <SelectItem value="Mạng xã hội">Mạng xã hội</SelectItem>
+                  <SelectItem value="Trò chơi">Trò chơi</SelectItem>
+                  <SelectItem value="Giáo dục">Giáo dục</SelectItem>
                   <SelectItem value="Video">Video</SelectItem>
                 </SelectContent>
               </Select>
@@ -76,9 +76,9 @@ const Activity = () => {
                   <SelectValue placeholder="Status" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">All Status</SelectItem>
-                  <SelectItem value="allowed">Allowed</SelectItem>
-                  <SelectItem value="blocked">Blocked</SelectItem>
+                  <SelectItem value="all">Tất cả trạng thái</SelectItem>
+                  <SelectItem value="Cho phép">Cho phép</SelectItem>
+                  <SelectItem value="Chặn">Chặn</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -91,10 +91,10 @@ const Activity = () => {
             <table className="w-full">
               <thead className="border-b border-border bg-muted/50">
                 <tr>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Name</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Category</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Time Spent</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Status</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Tên</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Danh mục</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Thời gian sử dụng</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Trạng thái</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
@@ -111,8 +111,8 @@ const Activity = () => {
                     </td>
                     <td className="px-6 py-4">
                       <Badge
-                        variant={item.status === "allowed" ? "default" : "destructive"}
-                        className={item.status === "allowed" ? "bg-secondary" : ""}
+                        variant={item.status === "Cho phép" ? "default" : "destructive"}
+                        className={item.status === "Cho phép" ? "bg-secondary" : ""}
                       >
                         {item.status.charAt(0).toUpperCase() + item.status.slice(1)}
                       </Badge>
@@ -125,7 +125,7 @@ const Activity = () => {
           
           {filteredData.length === 0 && (
             <div className="py-12 text-center">
-              <p className="text-muted-foreground">No activity found matching your filters</p>
+              <p className="text-muted-foreground">Không tìm thấy hoạt động phù hợp với các bộ lọc</p>
             </div>
           )}
         </Card>

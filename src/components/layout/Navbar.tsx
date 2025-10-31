@@ -27,7 +27,7 @@ export const Navbar = () => {
           </div>
           <div>
             <h1 className="text-xl font-bold text-foreground">Parental Shield</h1>
-            <p className="text-xs text-muted-foreground">Safe Kids 2026</p>
+            <p className="text-xs text-muted-foreground">Bảo vệ trẻ em - GuardianTech</p>
           </div>
         </div>
 
@@ -40,10 +40,10 @@ export const Navbar = () => {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-56">
-            <DropdownMenuLabel>Parent Account</DropdownMenuLabel>
+            <DropdownMenuLabel>Tài khoản phụ huynh</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={handleLogout}>
-              Log out
+              Đăng xuất
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

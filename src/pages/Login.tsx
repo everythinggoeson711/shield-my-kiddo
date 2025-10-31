@@ -27,15 +27,15 @@ const Login = () => {
         localStorage.setItem("token", mockToken);
         
         toast({
-          title: "Login successful",
-          description: "Welcome back to Parental Shield",
+          title: "Đăng nhập thành công",
+          description: "Chào mừng trở lại Parental Shield",
         });
         
         navigate("/dashboard");
       } else {
         toast({
-          title: "Login failed",
-          description: "Please enter valid credentials",
+          title: "Đăng nhập thất bại",
+          description: "Vui lòng nhập thông tin đăng nhập hợp lệ",
           variant: "destructive",
         });
       }
@@ -50,16 +50,16 @@ const Login = () => {
           <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary-glow shadow-lg">
             <Shield className="h-9 w-9 text-primary-foreground" />
           </div>
-          <h2 className="mt-6 text-3xl font-bold text-foreground">Welcome Back</h2>
+          <h2 className="mt-6 text-3xl font-bold text-foreground">Chào mừng trở lại</h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            Sign in to your Parental Shield account
+            Đăng nhập vào tài khoản Parental Shield của bạn
           </p>
         </div>
 
         <form onSubmit={handleLogin} className="mt-8 space-y-6">
           <div className="space-y-4">
             <div>
-              <Label htmlFor="email">Email address</Label>
+              <Label htmlFor="email">Email</Label>
               <Input
                 id="email"
                 name="email"
@@ -74,7 +74,7 @@ const Login = () => {
             </div>
 
             <div>
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password">Mật khẩu</Label>
               <Input
                 id="password"
                 name="password"
@@ -99,7 +99,7 @@ const Login = () => {
               htmlFor="remember"
               className="text-sm font-normal text-muted-foreground"
             >
-              Remember me
+              Nhớ tôi
             </Label>
           </div>
 
@@ -108,11 +108,11 @@ const Login = () => {
             className="w-full bg-gradient-to-r from-primary to-primary-glow"
             disabled={isLoading}
           >
-            {isLoading ? "Signing in..." : "Sign in"}
+            {isLoading ? "Đăng nhập..." : "Đăng nhập"}
           </Button>
 
           <div className="text-center text-sm text-muted-foreground">
-            Secure parent authentication • Safe Kids 2026
+            Xác thực phụ huynh an toàn • Trẻ em an toàn 2026
           </div>
         </form>
       </div>

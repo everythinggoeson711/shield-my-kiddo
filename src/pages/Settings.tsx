@@ -19,8 +19,8 @@ const Settings = () => {
 
   const handleSave = () => {
     toast({
-      title: "Settings saved successfully!",
-      description: "Your preferences have been updated",
+      title: "Cấu hình đã được lưu thành công!",
+      description: "Các thiết lập của bạn đã được cập nhật",
     });
   };
 
@@ -28,17 +28,17 @@ const Settings = () => {
     <DashboardLayout>
       <div className="space-y-8">
         <div>
-          <h1 className="text-3xl font-bold text-foreground">Settings</h1>
-          <p className="mt-2 text-muted-foreground">Manage your account and protection preferences</p>
+          <h1 className="text-3xl font-bold text-foreground">Cấu hình</h1>
+          <p className="mt-2 text-muted-foreground">Quản lý tài khoản và các thiết lập bảo vệ</p>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-2">
           {/* Account Information */}
           <Card className="p-6">
-            <h2 className="text-xl font-semibold text-foreground">Account Information</h2>
+            <h2 className="text-xl font-semibold text-foreground">Thông tin tài khoản</h2>
             <div className="mt-6 space-y-4">
               <div>
-                <Label htmlFor="parentName">Parent Name</Label>
+                <Label htmlFor="parentName">Tên phụ huynh</Label>
                 <Input
                   id="parentName"
                   value={parentName}
@@ -48,7 +48,7 @@ const Settings = () => {
               </div>
 
               <div>
-                <Label htmlFor="parentEmail">Email Address</Label>
+                <Label htmlFor="parentEmail">Email</Label>
                 <Input
                   id="parentEmail"
                   type="email"
@@ -59,7 +59,7 @@ const Settings = () => {
               </div>
 
               <div>
-                <Label htmlFor="childName">Child Name</Label>
+                <Label htmlFor="childName">Tên bé</Label>
                 <Input
                   id="childName"
                   value={childName}
@@ -72,13 +72,13 @@ const Settings = () => {
 
           {/* Protection Settings */}
           <Card className="p-6">
-            <h2 className="text-xl font-semibold text-foreground">Protection Settings</h2>
+            <h2 className="text-xl font-semibold text-foreground">Cấu hình bảo vệ</h2>
             <div className="mt-6 space-y-6">
               <div className="flex items-center justify-between">
                 <div className="space-y-1">
-                  <Label htmlFor="safeMode">Safe Mode</Label>
+                  <Label htmlFor="safeMode">Chế độ an toàn</Label>
                   <p className="text-sm text-muted-foreground">
-                    Enhanced protection with stricter filtering
+                    Bảo vệ nâng cao với bộ lọc chặt hơn
                   </p>
                 </div>
                 <Switch
@@ -90,8 +90,8 @@ const Settings = () => {
 
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <Label>Daily Screen Time Limit</Label>
-                  <span className="text-sm font-medium text-foreground">{screenTimeLimit[0]} hours</span>
+                  <Label>Giới hạn thời gian sử dụng màn hình</Label>
+                  <span className="text-sm font-medium text-foreground">{screenTimeLimit[0]} giờ</span>
                 </div>
                 <Slider
                   value={screenTimeLimit}
@@ -105,9 +105,9 @@ const Settings = () => {
 
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <Label>Content Filter Level</Label>
+                  <Label>Mức độ lọc nội dung</Label>
                   <span className="text-sm font-medium text-foreground">
-                    {contentFilterLevel[0] === 1 ? "Low" : contentFilterLevel[0] === 2 ? "Medium" : "High"}
+                    {contentFilterLevel[0] === 1 ? "Thấp" : contentFilterLevel[0] === 2 ? "Trung bình" : "Cao"}
                   </span>
                 </div>
                 <Slider
@@ -126,7 +126,7 @@ const Settings = () => {
         {/* Save Button */}
         <div className="flex justify-end">
           <Button onClick={handleSave} size="lg" className="gap-2">
-            Save Settings
+            Lưu cấu hình
           </Button>
         </div>
       </div>
