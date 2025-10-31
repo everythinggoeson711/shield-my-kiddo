@@ -15,4 +15,19 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    chunkSizeWarningLimit: 1200,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom')) return 'vendor_react';
+            if (id.includes('@radix-ui') || id.includes('lucide-react') || id.includes('cmdk')) return 'vendor_ui';
+            if (id.includes('recharts') || id.includes('date-fns') || id.includes('embla-carousel-react')) return 'vendor_charts';
+            return 'vendor_misc';
+          }
+        },
+      },
+    },
+  },
 }));

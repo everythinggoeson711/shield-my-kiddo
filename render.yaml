@@ -1,0 +1,9 @@
+# Render static site configuration for a Vite React app
+# More info: https://render.com/docs/static-sites
+services:
+  - type: static_site
+    name: shield-my-kiddo
+    branch: main
+    buildCommand: "npm ci && npm run build"
+    publishPath: "dist"
+    plan: free
