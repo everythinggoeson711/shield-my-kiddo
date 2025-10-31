@@ -79,13 +79,13 @@ You can easily deploy this Vite + React app as a static site on Render.
 Recommended Render static site settings:
 
 - Branch: main
-- Build Command: npm ci && npm run build
+- Build Command: npm run build
 - Publish Directory: dist
 - Plan: Free (or select a paid plan if you need more resources)
 
 If you prefer repository-as-config, add a `render.yaml` to the project root with these settings (already included in this repo):
 
-- buildCommand: npm ci && npm run build
+- buildCommand: npm run build
 - publishPath: dist
 - branch: main
 
@@ -93,7 +93,7 @@ Quick steps on Render web UI:
 
 1. Create a new site and connect your GitHub repository.
 2. Choose the `main` branch.
-3. Set the Build Command to: `npm ci && npm run build`.
+3. Set the Build Command to: `npm run build`.
 4. Set the Publish Directory to: `dist`.
 5. Create the site and wait for the build to finish.
 
