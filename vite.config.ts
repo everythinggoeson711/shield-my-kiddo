@@ -13,6 +13,11 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      // Ensure all imports of react/react-dom resolve to the same installed copy.
+      // This avoids duplicate React instances when some packages bundle their own
+      // references or when package managers behave differently in CI/CD.
+      react: path.resolve(__dirname, 'node_modules/react'),
+      'react-dom': path.resolve(__dirname, 'node_modules/react-dom'),
     },
     // Prevent duplicate copies of React in the bundle which can cause runtime
     // errors like `De.createContext` when multiple React instances are present.
@@ -23,6 +28,9 @@ export default defineConfig(({ mode }) => ({
     include: ["react", "react-dom"],
   },
   build: {
+    // Emit source maps in production builds so we can map minified symbols
+    // (like `De`) back to their original code while debugging deployments.
+    sourcemap: true,
     chunkSizeWarningLimit: 1200,
     rollupOptions: {
       output: {
