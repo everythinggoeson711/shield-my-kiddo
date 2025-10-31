@@ -4,6 +4,6 @@ services:
   - type: static_site
     name: shield-my-kiddo
     branch: main
-  buildCommand: "npm run build"
+  buildCommand: "render:build"
     publishPath: "dist"
     plan: free
