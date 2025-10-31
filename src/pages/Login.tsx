@@ -112,7 +112,7 @@ const Login = () => {
           </Button>
 
           <div className="text-center text-sm text-muted-foreground">
-            Xác thực phụ huynh an toàn • Trẻ em an toàn 2026
+            Xác thực phụ huynh an toàn • Bảo vệ cho trẻ em GuardianTech
           </div>
         </form>
       </div>
